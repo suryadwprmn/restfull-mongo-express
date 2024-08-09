@@ -14,30 +14,31 @@ const products = [
         brand: 'Brand A',
         price: 20.00,
         color: 'Red',
-        size: 'M'
+        category: 'Baju'
     },
     {
         name: 'Denim Jacket',
         brand: 'Brand B',
         price: 50.00,
         color: 'Blue',
-        size: 'L'
+        category: 'Jaket'
     },
     {
         name: 'Running Shoes',
         brand: 'Brand C',
         price: 75.00,
         color: 'Black',
-        size: 'S'
+        category: 'Aksesoris'
     },
     {
-        name: 'Hoodie',
+        name: 'Chino Pants',
         brand: 'Brand D',
         price: 40.00,
-        color: 'Grey',
-        size: 'XL'
+        color: 'Beige',
+        category: 'Celana'
     }
 ];
+
 
 Product.insertMany(products)
 .then((result) => {
