@@ -1,5 +1,6 @@
 const path = require("path");
 const express = require("express");
+const bodyParser = require('body-parser');
 const mongoose = require("mongoose");
 const app = express();
 
@@ -9,8 +10,10 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));
 app.set('view engine', 'ejs');
 
-/* Model */
+// Middleware untuk mengurai data formulir
+app.use(bodyParser.urlencoded({ extended: true }));
 
+/* Model */
 const Product  = require('./model/product');
 
 
@@ -41,6 +44,18 @@ app.get('/products', async (req,res) => {
 app.get('/products/create', (req, res) => {
     res.render('product/create');
 })
+
+app.post('/products/create', async(req, res) => {
+    const product = new Product(req.body);
+    try {
+        await product.save();
+        res.redirect('/products');
+    } catch (error) {
+        console.error('Tidak Bisa Membuat ' , err);
+        res.status(500).send('Error create product')
+    }
+})
+
 
 
 
