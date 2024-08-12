@@ -13,20 +13,14 @@
         <thead>
             <tr>
                 <th>Name</th>
-                <th>Brand</th>
-                <th>Price</th>
-                <th>Color</th>
-                <th>Category</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
             <% for (const product of products) { %>
                 <tr>
                     <td><%= product.name %></td>
-                    <td><%= product.brand %></td>
-                    <td><%= product.price %></td>
-                    <td><%= product.color %></td>
-                    <td><%= product.category %></td>
+                    <td><a href="products/<%= product._id %>">Show</a></td>
                 </tr>
             <% } %>
         </tbody>
