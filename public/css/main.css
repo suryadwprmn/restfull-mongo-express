@@ -1,0 +1,28 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  background-color: azure;
+  height: 100vh;
+}
+.main .main-heading {
+  font-size: 2rem;
+}
+.main .main-paragraph {
+  display: flex;
+}
+
+@media (max-width: 600px) {
+  .main .main-paragraph {
+    flex-direction: column;
+  }
+  .main .main-paragraph p {
+    margin-top: 0.5rem;
+  }
+}
+
+.footer .footer-heading {
+  font-size: 3rem;
+}/*# sourceMappingURL=main.css.map */

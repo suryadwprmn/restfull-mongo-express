@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+// .main{
+//     background-color: aquamarine;
+//     height: 100vh;
+//     .main-heading{
+//         color: black;
+//     }
+    
+//     .main-paragraph {
+//         color: violet;
+//     }    
+// }
+
+.main{
+    background-color: azure;
+    height: 100vh;
+    & &-heading{
+        font-size: 2rem;
+    }
+     & &-paragraph {
+        display: flex;
+    }
+  
+}
+.main .main-paragraph {
+    @media (max-width: 600px) {
+        flex-direction: column;
+        
+        & p {
+          margin-top: 0.5rem;
+        }
+      }
+}
+
+.footer {
+    & &-heading{
+        font-size: 3rem;
+    }
+}
+
