@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/app.css">
+    <title>Edit Product</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Edit Product</h1>
+        <form action="/products/<%= product._id %>?_method=PUT" method="POST">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="<%= product ? product.name : '' %>"><br>
+            
+            <label for="brand">Brand:</label>
+            <input type="text" id="brand" name="brand" value="<%= product ? product.brand : '' %>"><br>
+            
+            <label for="price">Price:</label>
+            <input type="number" id="price" name="price" step="0.01" value="<%= product ? product.price : '' %>"><br>
+            
+            <label for="color">Color:</label>
+            <input type="text" id="color" name="color" value="<%= product ? product.color : '' %>"><br>
+            
+            <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="Baju" <%= product && product.category === 'Baju' ? 'selected' : '' %>>Baju</option>
+                <option value="Celana" <%= product && product.category === 'Celana' ? 'selected' : '' %>>Celana</option>
+                <option value="Aksesoris" <%= product && product.category === 'Aksesoris' ? 'selected' : '' %>>Aksesoris</option>
+                <option value="Jaket" <%= product && product.category === 'Jaket' ? 'selected' : '' %>>Jaket</option>
+            </select><br>
+            
+            <button type="submit">Edit Product</button>
+        </form>
+    </div>
+</body>
+</html>
