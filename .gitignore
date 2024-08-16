@@ -1,6 +1,6 @@
 # yarn v2
-node_modules
-gitignore
+node_modules/
+.gitignore
 .yarn/cache
 .yarn/unplugged
 .yarn/build-state.yml
